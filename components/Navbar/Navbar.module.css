@@ -1,0 +1,127 @@
+.navbarMain {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 0.3rem 2rem;
+    color: black;
+  }
+
+  .navbar{
+    border: 1px solid gainsboro;
+  }
+  
+  .navLinks {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 0px;
+    margin-bottom: 8px;
+  }
+  .actions {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+  }
+
+  .actionIcons {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+  
+  .navLinks li a {
+    text-decoration: none;
+    color: black;
+    transition: color 0.2s;
+    font-size: 18px;
+    width: 100px;
+  }
+  
+  .navLinks li a:hover {
+    color: gray;
+  }
+
+  .navLinks li a.activeLink {
+    font-weight: 700;
+  }
+
+  .hamburgerContainer {
+    display: flex;
+    gap: 1;
+    align-items: center;
+    min-width: 168px;
+  }
+
+  .hamburger {
+    display: none;
+    margin-right: 4px;
+  }
+
+  .logo {
+    font-size: 36px;
+    font-weight: 800;
+  }
+  .leftArrow {
+    display: none;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .hamburger {
+      display: block;
+    }
+    .leftArrow {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      display: block;
+    }
+    .hamburgerContainer {
+      min-width: 92px;
+    }
+
+    .logo {
+      font-size: 20px;
+    }
+
+    .actionIcons {
+      width: 20px;
+      height: 20px;
+    }
+    .actions{
+      gap: 4px;
+    }
+
+    .navbarMain {
+      padding: 1rem;
+    }
+  
+    .navLinks {
+      flex-direction: column;
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      background-color: white;
+      color: black;
+      border: 1px solid gray;
+      padding: 1rem;
+      width: 200px;
+      border-radius: 0px 5px 5px 0px;
+      height: 100vh;
+      justify-content: flex-start;
+      transition-duration: 300ms;
+    }
+    .navbarClose {
+      transform: translateX(-100%);
+    }
+  
+    .navLinks li {
+      margin: 0.3rem 0;
+    }
+  }
+  
