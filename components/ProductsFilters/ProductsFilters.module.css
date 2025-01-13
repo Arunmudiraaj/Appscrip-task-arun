@@ -44,6 +44,8 @@
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
   transition-duration: 300ms;
   overflow-y: auto;
+  background-color: white;
+  z-index: 5;
 }
 
 .filtersClose {
