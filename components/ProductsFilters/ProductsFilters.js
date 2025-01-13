@@ -4,6 +4,7 @@ import styles from "./ProductsFilters.module.css";
 import CustomMultiSelector from "../CustomMultiselector/CustomMultiSelector";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import { APIS } from "@/constants/constants";
 
 const allFilters = [
   {
@@ -34,6 +35,7 @@ const ProductsFilters = () => {
   const [filters, setFilters] = useState(allFilters);
   const [allCategories, setAllCategories] = useState([]);
   const [category, setCategory] = useState("");
+  const [categoryLoading, setCategoryLoading] = useState(false)
 
   const toggleFilters = () => setIsOpen((prev) => !prev);
 
@@ -50,15 +52,16 @@ const ProductsFilters = () => {
   useEffect(() => {
     const getCategories = async () => {
       try {
-        const response = await axios.get(
-          "https://fakestoreapi.com/products/categories"
-        );
+        setCategoryLoading(true)
+        const response = await axios.get(APIS.FETCH_CATEGORIES);
         setAllCategories(response?.data || []);
       } catch (error) {
         console.error(
           "Failed to fetch categories",
           error
         );
+      } finally{
+        setCategoryLoading(false)
       }
     };
 
@@ -81,7 +84,7 @@ const ProductsFilters = () => {
           {isOpen ? "HIDE FILTERS" : "SHOW FILTERS"}
         </div>
       </div>
-      <select
+      {!categoryLoading ? <select
         value={category}
         onChange={categoryChangeHandler}
         className={styles.selector}
@@ -92,7 +95,8 @@ const ProductsFilters = () => {
             {ele}
           </option>
         ))}
-      </select>
+      </select> :
+      <div className={styles.selector}>loading...</div>}
       <div
         className={`${styles.filters} ${isOpen ? "" : styles.filtersClose}`}
       >

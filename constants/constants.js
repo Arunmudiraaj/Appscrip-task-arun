@@ -25,3 +25,13 @@ export const routes = [
     route: "/contact"
   },
 ]
+
+
+export const APIS = {
+  FETCH_CATEGORIES : "https://fakestoreapi.com/products/categories",
+  FETCH_PRODUCTS: "https://fakestoreapi.com/products"
+}
+
+export const commonStyle = {texiAline: "center"}
+
+export const tempCommonStyles = {textAlign: "center", padding: "50px", fontSize: "25px", fontWeight: 700}

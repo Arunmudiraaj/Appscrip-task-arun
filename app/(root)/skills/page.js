@@ -1,10 +1,12 @@
+import { tempCommonStyles } from "@/constants/constants";
+
 export const metadata = {
   title: "Skills",
 };
 
 export default function Skills() {
   return (
-    <div >
+    <div style={tempCommonStyles}>
       skills
     </div>
   );

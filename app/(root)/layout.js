@@ -1,6 +1,8 @@
 import Navbar from "@/components/Navbar/Navbar";
 import "../globals.css";
 import { Inter } from 'next/font/google';
+import styles from './page.module.css'
+import Footer from "@/components/Footer/Footer";
 
 export const metadata = {
   title: "Shop clothes, shoes any many more!",
@@ -10,15 +12,15 @@ export const metadata = {
 const inter = Inter({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
-  variable: '--font-inter',
 });
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.variable}>
+      <body className={inter.className}>
         <Navbar/>
-        {children}
+        <div className={styles.mainContent}>{children}</div>
+        <Footer/>
       </body>
     </html>
   );

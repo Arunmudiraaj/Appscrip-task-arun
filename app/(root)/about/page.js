@@ -1,3 +1,5 @@
+import { tempCommonStyles } from "@/constants/constants";
+
 export const metadata = {
   title: "About Us",
   description: "Learn more about our company, mission, and team.",
@@ -5,7 +7,7 @@ export const metadata = {
 
 export default function About() {
   return (
-    <div >
+    <div style={tempCommonStyles}>
       about
     </div>
   );

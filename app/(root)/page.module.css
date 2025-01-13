@@ -1,5 +1,44 @@
 .main {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0px 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0px 20px;
+}
+
+.allProducts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  border: 1px solid gainsboro;
+  margin-bottom: 10px;
+}
+
+.noData {
+  text-align: center;
+  width: 100%;
+  grid-column: 1 / -1;
+  padding: 100px 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.mainContent {
+  padding-top: 85px;
+}
+
+@media (max-width: 1000px) {
+  .allProducts {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .allProducts {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .mainContent {
+    padding-top: 58px;
+  }
 }
